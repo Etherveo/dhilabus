@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Picbus"
+                android:textStyle="bold"
+                android:textColor="#2F5DA8"
+                android:textSize="18sp"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/picbus_logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login Khusus Pakbus"
+            android:textStyle="bold"
+            android:textColor="#2F5DA8"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:text="Username / ID Pakbus"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etUsernamePakbus"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Masukkan ID Pakbus"
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:background="@color/borderLight"
+            android:inputType="text"/>
+
+        <TextView
+            android:text="Password"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etPasswordPakbus"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Masukkan password"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:background="@color/borderLight"/>
+
+        <Button
+            android:id="@+id/btnLoginPakbus"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/darkblue"
+            android:text="Masuk sebagai Pakbus"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

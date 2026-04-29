@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Picbus" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Warna utama indikator aktif pada Material 3 -->
+        <item name="colorContainer">#C77878</item>
+    </style>
+
+    <style name="Theme.Picbus" parent="Base.Theme.Picbus" />
+</resources>

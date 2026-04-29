@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F9">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/icon"
+                    android:contentDescription="icon" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Picbus"
+                    android:textColor="#2F5DA8"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- TITLE -->
+            <TextView
+                android:text="Rute Perjalanan"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textColor="#2F5DA8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>
+
+            <!-- STATUS BUS LIVE -->
+            <TextView
+                android:id="@+id/tvBusStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="● Memuat data bus..."
+                android:textSize="12sp"
+                android:textColor="#999999"/>
+
+            <!-- INFO BOX -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@android:color/white"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ESTIMASI"
+                        android:textSize="10sp"
+                        android:textColor="#999999"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvEstimasiRute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- Menit"
+                        android:textSize="16sp"
+                        android:textColor="#2F5DA8"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <View android:layout_width="1dp" android:layout_height="40dp" android:background="#DDDDDD"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JARAK"
+                        android:textSize="10sp"
+                        android:textColor="#999999"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvJarakRute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- KM"
+                        android:textSize="16sp"
+                        android:textColor="#2F5DA8"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <View android:layout_width="1dp" android:layout_height="40dp" android:background="#DDDDDD"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PEMBERHENTIAN"
+                        android:textSize="10sp"
+                        android:textColor="#999999"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tvHalteRute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-- Halte"
+                        android:textSize="16sp"
+                        android:textColor="#2F5DA8"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/containerHalteList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

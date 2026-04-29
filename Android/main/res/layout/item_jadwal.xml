@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginTop="12dp"
+    android:padding="8dp">
+
+    <!-- ICON -->
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/icon"
+        android:gravity="center">
+    </LinearLayout>
+
+    <!-- TEXT -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_waktu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06:30"
+            android:textSize="16sp"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_keterangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus C • Gerbang Utama"
+            android:textColor="#777"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

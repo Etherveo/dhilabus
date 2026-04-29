@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon"
+                android:contentDescription="bus"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Picbus"
+                android:textStyle="bold"
+                android:textColor="#2F5DA8"
+                android:textSize="18sp"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- GAMBAR BUS -->
+
+        <!-- LOGO -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:text=""
+            android:textColor="#555"
+            android:textSize="12sp" />
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrasi Picbus"
+            android:textStyle="bold"
+            android:textColor="#2F5DA8"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buat akun anda untuk memulai perjalanan Anda"
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- NAMA -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="Nama Lengkap"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/borderLight"
+            android:padding="16dp"
+            android:textColor="@color/black" />
+
+        <!-- NIM -->
+        <TextView
+            android:text="NIM"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/nim"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/borderLight"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="@color/black" />
+
+        <!-- NOMOR TELEPON -->
+        <TextView
+            android:text="Nomor Telepon"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/no_telp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/borderLight"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:text="password"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- BUTTON -->
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/borderLight"
+            android:textColor="@color/black"
+            android:padding="16dp"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnregister"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Daftar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

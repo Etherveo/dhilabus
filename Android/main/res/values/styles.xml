@@ -1,0 +1,5 @@
+<resources>
+    <style name="BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:layout_height">@dimen/bottom_nav_height</item>
+    </style>
+</resources>

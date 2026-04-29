@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F9">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- HEADER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/icon"
+                    android:contentDescription="icon"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Picbus"
+                    android:textStyle="bold"
+                    android:textColor="#2F5DA8"
+                    android:textSize="18sp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pusat Bantuan"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/tvNamaBus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kontak Konduktor"
+                android:textStyle="bold"
+                android:textColor="#2F5DA8"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- KONTAK 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardKontak1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvNamaKondektur1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kondektur"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNomorTelp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08xx"
+                        android:textSize="16sp"
+                        android:textColor="#2F5DA8"
+                        android:layout_marginTop="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnHubungi1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hubungi Kontak 1"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="@color/yellow"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- KONTAK 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardKontak2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvNamaKondektur2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kondektur"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNomorTelp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08xx"
+                        android:textSize="16sp"
+                        android:textColor="#2F5DA8"
+                        android:layout_marginTop="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnHubungi2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hubungi Kontak 2"
+                        android:layout_marginTop="12dp"
+                        android:backgroundTint="@color/yellow"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- FORM SARAN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saran &amp; Kendala"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="30dp"
+                android:textColor="#2F5DA8"/>
+
+            <EditText
+                android:id="@+id/etSaran"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:gravity="top"
+                android:padding="12dp"
+                android:hint="Tuliskan saran atau kendala aplikasi Anda di sini..."
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btnKirimSaran"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:text="Kirim ke Developer"
+                android:backgroundTint="@color/darkblue"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

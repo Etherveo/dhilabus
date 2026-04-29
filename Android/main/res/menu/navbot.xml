@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_hom"
+        android:icon="@drawable/hom"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_jad"
+        android:icon="@drawable/jad"
+        android:title="Jadwal Bus" />
+
+    <item
+        android:id="@+id/nav_rute"
+        android:icon="@drawable/rut"
+        android:title="Rute" />
+
+    <item
+        android:id="@+id/nav_profil"
+        android:icon="@drawable/akun"
+        android:title="Profil" />
+
+</menu>

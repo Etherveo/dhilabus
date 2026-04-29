@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon"
+                android:contentDescription="bus"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Picbus"
+                android:textStyle="bold"
+                android:textColor="#2F5DA8"
+                android:textSize="18sp"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- GAMBAR BUS -->
+        <ImageView
+            android:id="@+id/imgBus"
+            android:layout_width="229dp"
+            android:layout_height="167dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:contentDescription="bus"
+            android:src="@drawable/picbus_logo" />
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang di Picbus"
+            android:textStyle="bold"
+            android:textColor="#2F5DA8"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pantau keberadaan bus kampus dengan mudah. Tanpa harus takut ketinggalan bus."
+            android:textSize="14sp"
+            android:textColor="#666"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- NIM -->
+        <TextView
+            android:text="NIM"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/nim"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/black"
+            android:hint="Nomor Induk Mahasiswa"
+            android:inputType="number"
+            android:padding="16dp"
+            android:background="@color/borderLight"/>
+
+        <!-- PASSWORD -->
+        <TextView
+            android:text="Password"
+            android:textColor="#2F5DA8"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/black"
+            android:hint="Masukkan password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:background="@color/borderLight"/>
+
+        <!-- BUTTON LOGIN -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/yellow"
+            android:text="Masuk"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- BAGIAN BAWAH: PAKBUS & DAFTAR -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/toPakbusLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pakbus"
+                android:textColor="#2F5DA8"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_alignParentStart="true"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="167dp"
+                    android:layout_height="wrap_content"
+                    android:text="Belum punya akun? "
+                    android:textColor="#666" />
+
+                <TextView
+                    android:id="@+id/toregister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daftar"
+                    android:textColor="#2F5DA8"
+                    android:textStyle="bold"
+                    android:padding="5dp"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
