@@ -3,8 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\api\BusController;
-use App\Http\Controllers\api\PakbusController;
+use App\Http\Controllers\Api\BusController;
+use App\Http\Controllers\Api\PakbusController;
 use App\Http\Controllers\Api\RuteController;
 
 // Endpoint Publik (Tidak butuh token)

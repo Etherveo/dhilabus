@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F5F5F5"
     android:padding="20dp">
 
-    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,6 @@
             android:layout_height="28dp"
             android:src="@drawable/icon"/>
 
-
         <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
         <TextView
@@ -32,7 +31,6 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <!-- Salam -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,9 +48,7 @@
         android:textColor="#666666"
         android:textSize="14sp"/>
 
-    <!-- Card Status Live Location -->
     <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
@@ -90,18 +86,14 @@
                     android:textSize="13sp"/>
             </LinearLayout>
 
-            <!-- Switch -->
-
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchLiveLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Keterangan -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,9 +102,48 @@
         android:textColor="#999999"
         android:textSize="12sp"/>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulasi Lokasi Manual"
+                android:textStyle="bold"
+                android:textColor="#2F5DA8"
+                android:textSize="14sp"/>
+
+            <Spinner
+                android:id="@+id/spinnerLokasiManual"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/btn_dropdown"/>
+
+            <Button
+                android:id="@+id/btnHapusLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Reset &amp; Pakai GPS Asli"
+                android:backgroundTint="#E53935"
+                android:textColor="@android:color/white"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
     <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
 
-    <!-- Tombol Logout -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogoutPakbus"
         android:layout_width="match_parent"
@@ -121,7 +152,6 @@
         android:text="Logout"
         android:textSize="16sp"
         android:backgroundTint="#E53935"
-        app:cornerRadius="28dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto"/>
+        app:cornerRadius="28dp"/>
 
 </LinearLayout>

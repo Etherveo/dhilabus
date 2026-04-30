@@ -35,9 +35,9 @@ class Rute : Fragment() {
         busName = arguments?.getString("bus_type") ?: ""
 
         val tvBusName    = view.findViewById<TextView>(R.id.tvNamaBus)
-        val tvEstimasi   = view.findViewById<TextView>(R.id.tvEstimasi)
-        val tvJarak      = view.findViewById<TextView>(R.id.tvJarak)
-        val tvHalteCount = view.findViewById<TextView>(R.id.tvJumlahHalte)
+        val tvEstimasi   = view.findViewById<TextView>(R.id.tvEstimasiRute)
+        val tvJarak      = view.findViewById<TextView>(R.id.tvJarakRute)
+        val tvHalteCount = view.findViewById<TextView>(R.id.tvHalteRute)
         val rvHalte      = view.findViewById<RecyclerView>(R.id.rvHalte)
 
         tvBusName.text = busName
@@ -132,7 +132,7 @@ class HalteAdapter(
     // Warna: biru = #1565C0, abu = #9E9E9E, teks = putih / gelap
     private val BLUE   = Color.parseColor("#1565C0")
     private val GRAY   = Color.parseColor("#9E9E9E")
-    private val ACTIVE = Color.parseColor("#0D47A1") // biru lebih gelap = sekarang
+    private val GREEN = Color.parseColor("#2E7D32") // biru lebih gelap = sekarang
 
     inner class VH(view: View) : RecyclerView.ViewHolder(view) {
         val tvNama    : TextView = view.findViewById(R.id.tvNamaHalte)
@@ -156,9 +156,9 @@ class HalteAdapter(
         // Warna berdasarkan status — biru tidak bisa kembali ke abu
         when (halte.status) {
             "sekarang"    -> {
-                holder.indicator.setBackgroundColor(ACTIVE)
-                holder.tvNama.setTextColor(ACTIVE)
-                holder.tvUrutan.setTextColor(ACTIVE)
+                holder.indicator.setBackgroundColor(GREEN)
+                holder.tvNama.setTextColor(GREEN)
+                holder.tvUrutan.setTextColor(GREEN)
                 // Pulse animation (opsional)
                 holder.indicator.animate().scaleX(1.15f).scaleY(1.15f)
                     .setDuration(600).withEndAction {

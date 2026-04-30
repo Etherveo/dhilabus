@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
@@ -36,6 +37,7 @@ class Beranda : Fragment() {
     private val busMarkers = mutableMapOf<String, Marker>()
     private val handler = Handler(Looper.getMainLooper())
     private val POLLING_INTERVAL = 10_000L
+    private lateinit var busListAdapter: BusListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +51,10 @@ class Beranda : Fragment() {
         )
 
         val view = inflater.inflate(R.layout.a_beranda, container, false)
+
+        val rvBus = view.findViewById<RecyclerView>(R.id.rvBusOperasional)
+        busListAdapter = BusListAdapter { busName -> navigateToRute(busName) }
+        rvBus?.adapter = busListAdapter
 
         // Ambil data dari SharedPreferences
         val sharedPref = requireActivity()
@@ -73,13 +79,13 @@ class Beranda : Fragment() {
         val btnKampus1to4     = view.findViewById<LinearLayout>(R.id.btnKampus1to4)
         val btnKampus4to1     = view.findViewById<LinearLayout>(R.id.btnKampus4to1)
         val btnLacakBus       = view.findViewById<LinearLayout>(R.id.btnLacakBus)
-        val tvNamaBusTerdekat = view.findViewById<TextView>(R.id.tvNamaBusTerdekat)
+//        val tvNamaBusTerdekat = view.findViewById<TextView>(R.id.tvNamaBusTerdekat)
 
         btnKampus1to4.setOnClickListener { navigateToJadwal() }
         btnKampus4to1.setOnClickListener { navigateToJadwal() }
-        btnLacakBus.setOnClickListener {
-            navigateToRute(tvNamaBusTerdekat.text.toString())
-        }
+//        btnLacakBus.setOnClickListener {
+//            navigateToRute(tvNamaBusTerdekat.text.toString())
+//        }
 
         return view
     }
@@ -94,19 +100,19 @@ class Beranda : Fragment() {
     private fun fetchSemuaPosisiBus() {
         RetrofitClient.instance.semuaPosisiBus()
             .enqueue(object : Callback<BusPositionResponse> {
-                override fun onResponse(
-                    call: Call<BusPositionResponse>,
-                    response: Response<BusPositionResponse>
-                ) {
+                override fun onResponse(call: Call<BusPositionResponse>, response: Response<BusPositionResponse>) {
                     if (response.isSuccessful && response.body()?.success == true) {
-                        val buses = response.body()!!.buses
-                        updateMarkersOnMap(buses)
+                        val allBuses = response.body()!!.buses
+
+                        // Update Marker di Map (Semua bus)
+                        updateMarkersOnMap(allBuses)
+
+                        // Update Daftar Bus Beroperasi (Hanya yang online)
+                        val onlineBuses = allBuses.filter { it.isOnline }
+                        busListAdapter.submitList(onlineBuses)
                     }
                 }
-
-                override fun onFailure(call: Call<BusPositionResponse>, t: Throwable) {
-                    // Gagal fetch — marker terakhir tetap tampil
-                }
+                override fun onFailure(call: Call<BusPositionResponse>, t: Throwable) {}
             })
     }
 
@@ -270,4 +276,29 @@ class Beranda : Fragment() {
         homeActivity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
             ?.selectedItemId = R.id.nav_jad
     }
+}
+
+class BusListAdapter(private val onClick: (String) -> Unit) :
+    RecyclerView.Adapter<BusListAdapter.VH>() {
+
+    private var list = listOf<BusPosition>()
+    fun submitList(newList: List<BusPosition>) {
+        list = newList
+        notifyDataSetChanged()
+    }
+
+    inner class VH(v: View) : RecyclerView.ViewHolder(v) {
+        val name = v.findViewById<TextView>(R.id.tvItemNamaBus)
+        init { v.setOnClickListener { onClick(list[adapterPosition].namaBus) } }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = VH(
+        LayoutInflater.from(parent.context).inflate(R.layout.item_bus_operasional, parent, false)
+    )
+
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        holder.name.text = list[position].namaBus
+    }
+
+    override fun getItemCount() = list.size
 }
